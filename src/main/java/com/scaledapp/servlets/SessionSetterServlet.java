@@ -28,8 +28,8 @@ public class SessionSetterServlet extends HttpServlet {
      *      response)
      */
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String gear = System.getenv("OPENSHIFT_GEAR_UUID");
-        System.out.println("OPENSHIFT_GEAR_UUID :  " + gear);
+        String gear = System.getenv("KUBERNETES_SERVICE_HOST");
+        System.out.println("KUBERNETES_SERVICE_HOST :  " + gear);
         request.getSession().setAttribute("gear", gear);
         response.sendRedirect("/");
     }
